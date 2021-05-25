@@ -1,15 +1,8 @@
-:root {
-    --clr-primary: rgb(54, 112, 199);
-    --clr-light: #f4f4f4;
-    --clr-dark: #333;
-    --clr-warning: rgb(99, 36, 36);
-}
-
-body {
+.body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1.5em;
     background-color: var(--clr-primary);
-    color: var(--clr-dark);
+    color: var(--clr-light);
 }

@@ -30,8 +30,7 @@ export default {
         getList (){
             axios.get('api/tasks')
             .then( response =>   {
-                this.tasks = response.data
-                // console.log(response)
+                this.tasks = response.data;
             })
             .catch( error => {
                 console.log( error);

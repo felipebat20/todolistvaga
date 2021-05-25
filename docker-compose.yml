@@ -1,9 +1,3 @@
-####
-# ATTENTION:
-# Replace all occurrences of sandbox with your project's name.
-####
-
-# v3 syntax
 version: '3'
 
 # Named volumes
@@ -12,56 +6,30 @@ volumes:
   todolist-mysql-data:
     driver: local
 
-  # Redis Data
-  todolist-redis-data:
-    driver: local
-
 services:
   
   # MySQL (5.7)
-  mysql:
-    image: mysql:5.7
-    container_name: todolist-mysql
-    volumes:
-      - todolist-mysql-data:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=todolist
-      - MYSQL_DATABASE=todolist
-      - MYSQL_USER=todolist
-      - MYSQL_PASSWORD=todolist
+    mysql:
+        image: mysql:5.7
+        container_name: todolist-mysql
+        volumes:
+        - todolist-mysql-data:/var/lib/mysql
+        ports:
+        - 3306:3306
+        environment:
+        - MYSQL_ROOT_PASSWORD=todolist
+        - MYSQL_DATABASE=todolist
+        - MYSQL_USER=todolist
+        - MYSQL_PASSWORD=todolist
 
-  # Redis
-  cache:
-    image: redis:4.0
-    container_name: todolist-redis
-    command: --appendonly yes
-    volumes:
-      - todolist-redis-data:/data
-    ports:
-      - "6379:6379"
 
   # PHP (with Nginx)
-  app:
-    image: ambientum/php:7.3-nginx
-    container_name: todolist-app
-    volumes:
-      - .:/var/www/app
-    ports:
-      - "8080:8080"
-      - "8083:8083"
-    links:
-      - mysql
-      - cache
-
-  # Laravel Queues
-  queue:
-    image: ambientum/php:7.3
-    container_name: todolist-queue
-    command: php artisan queue:listen
-    volumes:
-      - .:/var/www/app
-    links:
-      - mysql
-      - cache
+    app:
+        image: ambientum/php:7.3-nginx
+        container_name: todolist-app
+        volumes:
+        - .:/var/www/app
+        ports:
+        - 8080:8080
+        links:
+        - mysql
