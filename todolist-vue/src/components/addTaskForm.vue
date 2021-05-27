@@ -1,6 +1,6 @@
 <template>
     <div class="addTask">
-        <input type="text" v-model="task.name" @keyup.enter="addTask()"/>
+        <input type="text" v-model="task.name" @keyup.enter="addTask()" required/>
         <font-awesome-icon
             icon="plus-square"
             @click="addTask()"
@@ -12,7 +12,7 @@
 <script>
 import axios from 'axios';
 export default {
-    data: function(){
+    data(){
         return{
             task: {
                 name:""
@@ -22,6 +22,7 @@ export default {
     methods:{
         addTask(){
             if(this.task.name == ''){
+                
                 return;
             }
 

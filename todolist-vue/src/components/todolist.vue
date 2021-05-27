@@ -52,9 +52,12 @@ export default {
 
     }
     .heading{
+        display: block;
         background: #e6e6e6;
         padding: 10px;
         border-radius: 5px;
+        height: 100px;
+        box-sizing: border-box;
     }
     #title{
         text-align: center;
@@ -63,5 +66,7 @@ export default {
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 28px;
+        margin-top: 10px;
+        padding: 10px;
     }
 </style>
