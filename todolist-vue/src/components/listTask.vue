@@ -6,7 +6,6 @@
             v-model="task.completed"
 
         />
-        <!-- <span >{{task.name}}</span> -->
         <input type="text" v-model="task.name" :class="[task.completed ? 'completed' : '', 'taskText']" :readonly="update == false" @keyup.enter="updateTask()">
         <button @click="startUpdate()" class="pencil" >
             <font-awesome-icon icon="pencil-alt"/>
