@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Pomodoro/>
     <Todolist/>
   </div>
 </template>
@@ -7,12 +8,14 @@
 <script>
 
 import Todolist from './components/todolist.vue'
+import Pomodoro from './components/pomodoro.vue'
 import './styles/global.css'
 
 
 export default {
   name: 'App',
   components: {
+    Pomodoro,
     Todolist
   }
 }
