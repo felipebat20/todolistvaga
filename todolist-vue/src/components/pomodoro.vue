@@ -90,9 +90,14 @@ export default {
     }
     .container {
         background: white;
-        width: 60%;
-        margin: auto;
+        width: 50%;
+        margin: 0 auto;
+        padding: 1em 0;
     }
+    nav {
+        margin: 10px auto;
+    }
+    
     .menu-pomodoro li {
         display: inline-block;
         padding: 0.5em 4em;
